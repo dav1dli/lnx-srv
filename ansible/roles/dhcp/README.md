@@ -3,6 +3,8 @@ Role Name
 
 DHCP role managing DHCP + BOOTP service on a RHEL/CentOS Linux host.
 
+The role generates a list of defined hosts and includes them in the global DHCP configuration.
+ 
 Role Variables
 --------------
 

@@ -25,16 +25,16 @@
     "ansible_date_time": {
         "date": "2020-09-23",
         "day": "23",
-        "epoch": "1600812341",
+        "epoch": "1600813537",
         "hour": "00",
-        "iso8601": "2020-09-22T22:05:41Z",
-        "iso8601_basic": "20200923T000541010764",
-        "iso8601_basic_short": "20200923T000541",
-        "iso8601_micro": "2020-09-22T22:05:41.010764Z",
-        "minute": "05",
+        "iso8601": "2020-09-22T22:25:37Z",
+        "iso8601_basic": "20200923T002537212575",
+        "iso8601_basic_short": "20200923T002537",
+        "iso8601_micro": "2020-09-22T22:25:37.212575Z",
+        "minute": "25",
         "month": "09",
-        "second": "41",
-        "time": "00:05:41",
+        "second": "37",
+        "time": "00:25:37",
         "tz": "CEST",
         "tz_offset": "+0200",
         "weekday": "Wednesday",
@@ -477,7 +477,7 @@
         "PWD": "/home/dliderma/lnx-srv/ansible",
         "SHELL": "/bin/bash",
         "SHLVL": "1",
-        "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-goqcatvgfhjugwrbtezwmobjzlkwlctc ; /usr/libexec/platform-python",
+        "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-jcifmfuyfgwnsaddzdpzpscednuxyqwv ; /usr/libexec/platform-python",
         "SUDO_GID": "1000",
         "SUDO_UID": "1000",
         "SUDO_USER": "dliderma",
@@ -493,8 +493,8 @@
     "ansible_hostnqn": "",
     "ansible_interfaces": [
         "ens3",
-        "ens7",
-        "lo"
+        "lo",
+        "ens7"
     ],
     "ansible_is_chroot": false,
     "ansible_iscsi_iqn": "",
@@ -615,16 +615,16 @@
     },
     "ansible_machine": "x86_64",
     "ansible_machine_id": "2622dce944444338a06b3fc1c328941d",
-    "ansible_memfree_mb": 103,
+    "ansible_memfree_mb": 102,
     "ansible_memory_mb": {
         "nocache": {
             "free": 1333,
             "used": 493
         },
         "real": {
-            "free": 103,
+            "free": 102,
             "total": 1826,
-            "used": 1723
+            "used": 1724
         },
         "swap": {
             "cached": 0,
@@ -636,18 +636,18 @@
     "ansible_memtotal_mb": 1826,
     "ansible_mounts": [
         {
-            "block_available": 1507686,
+            "block_available": 1507779,
             "block_size": 4096,
             "block_total": 2093568,
-            "block_used": 585882,
+            "block_used": 585789,
             "device": "/dev/mapper/cl-root",
             "fstype": "xfs",
-            "inode_available": 4131838,
+            "inode_available": 4131739,
             "inode_total": 4192256,
-            "inode_used": 60418,
+            "inode_used": 60517,
             "mount": "/",
             "options": "rw,seclabel,relatime,attr2,inode64,noquota",
-            "size_available": 6175481856,
+            "size_available": 6175862784,
             "size_total": 8575254528,
             "uuid": "efcbd33c-a8dc-4c48-a187-80de96d61ad2"
         },
@@ -777,7 +777,7 @@
     ],
     "ansible_system_capabilities_enforced": "True",
     "ansible_system_vendor": "Red Hat",
-    "ansible_uptime_seconds": 14457,
+    "ansible_uptime_seconds": 15653,
     "ansible_user_dir": "/root",
     "ansible_user_gecos": "root",
     "ansible_user_gid": 0,

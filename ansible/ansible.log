@@ -1,0 +1,290 @@
+2020-09-23 00:25:36,631 p=82518 u=dliderma n=ansible | PLAY [Configure Master] ******************************************************************************************************
+2020-09-23 00:25:36,640 p=82518 u=dliderma n=ansible | TASK [Gathering Facts] *******************************************************************************************************
+2020-09-23 00:25:37,515 p=82518 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:25:37,525 p=82518 u=dliderma n=ansible | TASK [Setup dhcp] ************************************************************************************************************
+2020-09-23 00:25:37,586 p=82518 u=dliderma n=ansible | TASK [dhcp : Install packages] ***********************************************************************************************
+2020-09-23 00:25:38,450 p=82518 u=dliderma n=ansible | ok: [localhost] => (item=dhcp-server)
+2020-09-23 00:25:39,082 p=82518 u=dliderma n=ansible | ok: [localhost] => (item=tftp-server)
+2020-09-23 00:25:39,713 p=82518 u=dliderma n=ansible | ok: [localhost] => (item=syslinux)
+2020-09-23 00:25:39,723 p=82518 u=dliderma n=ansible | TASK [dhcp : Open firewall ports] ********************************************************************************************
+2020-09-23 00:25:40,162 p=82518 u=dliderma n=ansible | ok: [localhost] => (item=dhcp)
+2020-09-23 00:25:40,478 p=82518 u=dliderma n=ansible | ok: [localhost] => (item=tftp)
+2020-09-23 00:25:40,489 p=82518 u=dliderma n=ansible | TASK [Get dhcpd.conf file status] ********************************************************************************************
+2020-09-23 00:25:40,759 p=82518 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:25:40,769 p=82518 u=dliderma n=ansible | TASK [Make dhcp dir] *********************************************************************************************************
+2020-09-23 00:25:40,793 p=82518 u=dliderma n=ansible | skipping: [localhost]
+2020-09-23 00:25:40,804 p=82518 u=dliderma n=ansible | TASK [Backup dhcpd.conf] *****************************************************************************************************
+2020-09-23 00:25:41,105 p=82518 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:25:41,115 p=82518 u=dliderma n=ansible | TASK [Install dhcpd.conf] ****************************************************************************************************
+2020-09-23 00:25:41,570 p=82518 u=dliderma n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "checksum": "2406063707f0ee7e34a623740055f63037aff46e", "msg": "validate must contain %s: /usr/sbin/dhcpd -t"}
+2020-09-23 00:25:41,570 p=82518 u=dliderma n=ansible | NO MORE HOSTS LEFT ***********************************************************************************************************
+2020-09-23 00:25:41,571 p=82518 u=dliderma n=ansible | PLAY RECAP *******************************************************************************************************************
+2020-09-23 00:25:41,572 p=82518 u=dliderma n=ansible | localhost                  : ok=5    changed=0    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2020-09-23 00:26:07,854 p=82650 u=dliderma n=ansible | PLAY [Configure Master] ******************************************************************************************************
+2020-09-23 00:26:07,875 p=82650 u=dliderma n=ansible | TASK [Setup dhcp] ************************************************************************************************************
+2020-09-23 00:26:07,936 p=82650 u=dliderma n=ansible | TASK [dhcp : Install packages] ***********************************************************************************************
+2020-09-23 00:26:08,795 p=82650 u=dliderma n=ansible | ok: [localhost] => (item=dhcp-server)
+2020-09-23 00:26:09,425 p=82650 u=dliderma n=ansible | ok: [localhost] => (item=tftp-server)
+2020-09-23 00:26:10,051 p=82650 u=dliderma n=ansible | ok: [localhost] => (item=syslinux)
+2020-09-23 00:26:10,061 p=82650 u=dliderma n=ansible | TASK [dhcp : Open firewall ports] ********************************************************************************************
+2020-09-23 00:26:10,506 p=82650 u=dliderma n=ansible | ok: [localhost] => (item=dhcp)
+2020-09-23 00:26:10,837 p=82650 u=dliderma n=ansible | ok: [localhost] => (item=tftp)
+2020-09-23 00:26:10,846 p=82650 u=dliderma n=ansible | TASK [Get dhcpd.conf file status] ********************************************************************************************
+2020-09-23 00:26:11,113 p=82650 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:26:11,123 p=82650 u=dliderma n=ansible | TASK [Make dhcp dir] *********************************************************************************************************
+2020-09-23 00:26:11,150 p=82650 u=dliderma n=ansible | skipping: [localhost]
+2020-09-23 00:26:11,161 p=82650 u=dliderma n=ansible | TASK [Backup dhcpd.conf] *****************************************************************************************************
+2020-09-23 00:26:11,448 p=82650 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:26:11,459 p=82650 u=dliderma n=ansible | TASK [Install dhcpd.conf] ****************************************************************************************************
+2020-09-23 00:26:11,925 p=82650 u=dliderma n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "checksum": "2406063707f0ee7e34a623740055f63037aff46e", "exit_status": 1, "msg": "failed to validate", "stderr": "/home/dliderma/.ansible/tmp/ansible-tmp-1600813571.486497-82705-233999408602390/source: interface name too long (is 86)\n\nThis version of ISC DHCP is based on the release available\non ftp.isc.org. Features have been added and other changes\nhave been made to the base software release in order to make\nit work better with this distribution.\n\nPlease report issues with this software via: \nhttps://bugs.centos.org/\n\nexiting.\n", "stderr_lines": ["/home/dliderma/.ansible/tmp/ansible-tmp-1600813571.486497-82705-233999408602390/source: interface name too long (is 86)", "", "This version of ISC DHCP is based on the release available", "on ftp.isc.org. Features have been added and other changes", "have been made to the base software release in order to make", "it work better with this distribution.", "", "Please report issues with this software via: ", "https://bugs.centos.org/", "", "exiting."], "stdout": "", "stdout_lines": []}
+2020-09-23 00:26:11,926 p=82650 u=dliderma n=ansible | NO MORE HOSTS LEFT ***********************************************************************************************************
+2020-09-23 00:26:11,927 p=82650 u=dliderma n=ansible | PLAY RECAP *******************************************************************************************************************
+2020-09-23 00:26:11,927 p=82650 u=dliderma n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2020-09-23 00:27:07,594 p=82734 u=dliderma n=ansible | PLAY [Configure Master] ******************************************************************************************************
+2020-09-23 00:27:07,616 p=82734 u=dliderma n=ansible | TASK [Setup dhcp] ************************************************************************************************************
+2020-09-23 00:27:07,674 p=82734 u=dliderma n=ansible | TASK [dhcp : Install packages] ***********************************************************************************************
+2020-09-23 00:27:08,532 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=dhcp-server)
+2020-09-23 00:27:09,156 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=tftp-server)
+2020-09-23 00:27:09,766 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=syslinux)
+2020-09-23 00:27:09,775 p=82734 u=dliderma n=ansible | TASK [dhcp : Open firewall ports] ********************************************************************************************
+2020-09-23 00:27:10,211 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=dhcp)
+2020-09-23 00:27:10,513 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=tftp)
+2020-09-23 00:27:10,524 p=82734 u=dliderma n=ansible | TASK [Get dhcpd.conf file status] ********************************************************************************************
+2020-09-23 00:27:10,784 p=82734 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:27:10,793 p=82734 u=dliderma n=ansible | TASK [Make dhcp dir] *********************************************************************************************************
+2020-09-23 00:27:10,816 p=82734 u=dliderma n=ansible | skipping: [localhost]
+2020-09-23 00:27:10,828 p=82734 u=dliderma n=ansible | TASK [Backup dhcpd.conf] *****************************************************************************************************
+2020-09-23 00:27:11,094 p=82734 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:27:11,104 p=82734 u=dliderma n=ansible | TASK [Install dhcpd.conf] ****************************************************************************************************
+2020-09-23 00:27:11,557 p=82734 u=dliderma n=ansible | changed: [localhost]
+2020-09-23 00:27:11,567 p=82734 u=dliderma n=ansible | TASK [dhcp : Generate host list] *********************************************************************************************
+2020-09-23 00:27:12,037 p=82734 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:27:12,047 p=82734 u=dliderma n=ansible | TASK [dhcp : Include host list] **********************************************************************************************
+2020-09-23 00:27:12,330 p=82734 u=dliderma n=ansible | changed: [localhost]
+2020-09-23 00:27:12,340 p=82734 u=dliderma n=ansible | TASK [Enable dhcp service] ***************************************************************************************************
+2020-09-23 00:27:12,866 p=82734 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:27:12,876 p=82734 u=dliderma n=ansible | TASK [dhcp : Create directory for the PXE boot] ******************************************************************************
+2020-09-23 00:27:13,047 p=82734 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:27:13,057 p=82734 u=dliderma n=ansible | TASK [dhcp : Copy files and directory for PXE] *******************************************************************************
+2020-09-23 00:27:13,240 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/altmbr.bin)
+2020-09-23 00:27:13,397 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/meminfo.c32)
+2020-09-23 00:27:13,561 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/altmbr_c.bin)
+2020-09-23 00:27:13,727 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/menu.c32)
+2020-09-23 00:27:13,887 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/altmbr_f.bin)
+2020-09-23 00:27:14,050 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/cat.c32)
+2020-09-23 00:27:14,211 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/chain.c32)
+2020-09-23 00:27:14,374 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/cmd.c32)
+2020-09-23 00:27:14,541 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/cmenu.c32)
+2020-09-23 00:27:14,699 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/config.c32)
+2020-09-23 00:27:14,862 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/cptime.c32)
+2020-09-23 00:27:15,022 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/cpu.c32)
+2020-09-23 00:27:15,184 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/cpuid.c32)
+2020-09-23 00:27:15,349 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/pci.c32)
+2020-09-23 00:27:15,501 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/cpuidtest.c32)
+2020-09-23 00:27:15,664 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/debug.c32)
+2020-09-23 00:27:15,822 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/dhcp.c32)
+2020-09-23 00:27:15,985 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/dir.c32)
+2020-09-23 00:27:16,140 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/disk.c32)
+2020-09-23 00:27:16,303 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/dmi.c32)
+2020-09-23 00:27:16,466 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/dmitest.c32)
+2020-09-23 00:27:16,629 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/elf.c32)
+2020-09-23 00:27:16,791 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/pmload.c32)
+2020-09-23 00:27:16,957 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/ethersel.c32)
+2020-09-23 00:27:17,125 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/gfxboot.c32)
+2020-09-23 00:27:17,281 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/gptmbr.bin)
+2020-09-23 00:27:17,439 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/pcitest.c32)
+2020-09-23 00:27:17,605 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/gptmbr_c.bin)
+2020-09-23 00:27:17,765 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/poweroff.c32)
+2020-09-23 00:27:17,923 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/gptmbr_f.bin)
+2020-09-23 00:27:18,093 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/gpxecmd.c32)
+2020-09-23 00:27:18,255 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/hdt.c32)
+2020-09-23 00:27:18,420 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/hexdump.c32)
+2020-09-23 00:27:18,589 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/host.c32)
+2020-09-23 00:27:18,748 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/ifcpu.c32)
+2020-09-23 00:27:18,910 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/ifcpu64.c32)
+2020-09-23 00:27:19,081 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/prdhcp.c32)
+2020-09-23 00:27:19,243 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/ifmemdsk.c32)
+2020-09-23 00:27:19,404 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/ifplop.c32)
+2020-09-23 00:27:19,568 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/pwd.c32)
+2020-09-23 00:27:19,723 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/isohdpfx.bin)
+2020-09-23 00:27:19,884 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/syslinux.exe)
+2020-09-23 00:27:20,048 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/isohdpfx_c.bin)
+2020-09-23 00:27:20,208 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/vesa.c32)
+2020-09-23 00:27:20,375 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/isohdpfx_f.bin)
+2020-09-23 00:27:20,546 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/vesainfo.c32)
+2020-09-23 00:27:20,707 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/isohdppx.bin)
+2020-09-23 00:27:20,868 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/vesamenu.c32)
+2020-09-23 00:27:21,027 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/isohdppx_c.bin)
+2020-09-23 00:27:21,192 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/vpdtest.c32)
+2020-09-23 00:27:21,360 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/isohdppx_f.bin)
+2020-09-23 00:27:21,527 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/whichsys.c32)
+2020-09-23 00:27:21,693 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/isolinux-debug.bin)
+2020-09-23 00:27:21,865 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/zzjson.c32)
+2020-09-23 00:27:22,034 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/isolinux.bin)
+2020-09-23 00:27:22,201 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/kbdmap.c32)
+2020-09-23 00:27:22,357 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/kontron_wdt.c32)
+2020-09-23 00:27:22,519 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/ldlinux.c32)
+2020-09-23 00:27:22,681 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/lfs.c32)
+2020-09-23 00:27:22,845 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/syslinux64.exe)
+2020-09-23 00:27:23,013 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/libcom32.c32)
+2020-09-23 00:27:23,179 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/libgpl.c32)
+2020-09-23 00:27:23,348 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/liblua.c32)
+2020-09-23 00:27:23,510 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/libmenu.c32)
+2020-09-23 00:27:23,682 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/libutil.c32)
+2020-09-23 00:27:23,851 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/linux.c32)
+2020-09-23 00:27:24,011 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/lpxelinux.0)
+2020-09-23 00:27:24,179 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/ls.c32)
+2020-09-23 00:27:24,344 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/lua.c32)
+2020-09-23 00:27:24,515 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/mboot.c32)
+2020-09-23 00:27:24,684 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/mbr.bin)
+2020-09-23 00:27:24,854 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/mbr_c.bin)
+2020-09-23 00:27:25,019 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/mbr_f.bin)
+2020-09-23 00:27:25,189 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/memdisk)
+2020-09-23 00:27:25,359 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/pxechn.c32)
+2020-09-23 00:27:25,523 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/pxelinux.0)
+2020-09-23 00:27:25,682 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/reboot.c32)
+2020-09-23 00:27:25,850 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/rosh.c32)
+2020-09-23 00:27:26,019 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/sanboot.c32)
+2020-09-23 00:27:26,189 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/sdi.c32)
+2020-09-23 00:27:26,354 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/sysdump.c32)
+2020-09-23 00:27:26,519 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/syslinux.c32)
+2020-09-23 00:27:26,688 p=82734 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/syslinux.com)
+2020-09-23 00:27:26,712 p=82734 u=dliderma n=ansible | TASK [dhcp : default PXE boot menu] ******************************************************************************************
+2020-09-23 00:27:27,058 p=82734 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:27:27,068 p=82734 u=dliderma n=ansible | TASK [dhcp : PXE boot menu for clients] **************************************************************************************
+2020-09-23 00:27:27,402 p=82734 u=dliderma n=ansible | ok: [localhost] => (item={'name': 'client.internal', 'ipaddr': '192.168.100.20', 'macaddr': '52:54:00:69:5b:20'})
+2020-09-23 00:27:27,413 p=82734 u=dliderma n=ansible | TASK [dhcp : Create CentOS8 boot dir] ****************************************************************************************
+2020-09-23 00:27:27,580 p=82734 u=dliderma n=ansible | changed: [localhost]
+2020-09-23 00:27:27,590 p=82734 u=dliderma n=ansible | TASK [dhcp : Install boot kernel] ********************************************************************************************
+2020-09-23 00:27:27,938 p=82734 u=dliderma n=ansible | changed: [localhost]
+2020-09-23 00:27:27,949 p=82734 u=dliderma n=ansible | TASK [dhcp : Install boot initrd] ********************************************************************************************
+2020-09-23 00:27:28,435 p=82734 u=dliderma n=ansible | changed: [localhost] => (item={'name': 'client.internal', 'ipaddr': '192.168.100.20', 'macaddr': '52:54:00:69:5b:20'})
+2020-09-23 00:27:28,445 p=82734 u=dliderma n=ansible | TASK [dhcp : SELinux repair PXE] *********************************************************************************************
+2020-09-23 00:27:28,743 p=82734 u=dliderma n=ansible | changed: [localhost]
+2020-09-23 00:27:28,744 p=82734 u=dliderma n=ansible | RUNNING HANDLER [restart dhcpd] **********************************************************************************************
+2020-09-23 00:27:29,071 p=82734 u=dliderma n=ansible | changed: [localhost]
+2020-09-23 00:27:29,072 p=82734 u=dliderma n=ansible | PLAY RECAP *******************************************************************************************************************
+2020-09-23 00:27:29,072 p=82734 u=dliderma n=ansible | localhost                  : ok=17   changed=7    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-09-23 00:34:19,280 p=84316 u=dliderma n=ansible | PLAY [Configure Master] ******************************************************************************************************
+2020-09-23 00:34:19,300 p=84316 u=dliderma n=ansible | TASK [Setup dhcp] ************************************************************************************************************
+2020-09-23 00:34:19,358 p=84316 u=dliderma n=ansible | TASK [dhcp : Install packages] ***********************************************************************************************
+2020-09-23 00:34:20,232 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=dhcp-server)
+2020-09-23 00:34:20,864 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=tftp-server)
+2020-09-23 00:34:21,479 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=syslinux)
+2020-09-23 00:34:21,489 p=84316 u=dliderma n=ansible | TASK [dhcp : Open firewall ports] ********************************************************************************************
+2020-09-23 00:34:21,934 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=dhcp)
+2020-09-23 00:34:22,247 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=tftp)
+2020-09-23 00:34:22,256 p=84316 u=dliderma n=ansible | TASK [Get dhcpd.conf file status] ********************************************************************************************
+2020-09-23 00:34:22,519 p=84316 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:34:22,528 p=84316 u=dliderma n=ansible | TASK [Make dhcp dir] *********************************************************************************************************
+2020-09-23 00:34:22,552 p=84316 u=dliderma n=ansible | skipping: [localhost]
+2020-09-23 00:34:22,563 p=84316 u=dliderma n=ansible | TASK [Backup dhcpd.conf] *****************************************************************************************************
+2020-09-23 00:34:22,839 p=84316 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:34:22,848 p=84316 u=dliderma n=ansible | TASK [Install dhcpd.conf] ****************************************************************************************************
+2020-09-23 00:34:22,873 p=84316 u=dliderma n=ansible | skipping: [localhost]
+2020-09-23 00:34:22,883 p=84316 u=dliderma n=ansible | TASK [dhcp : Generate host list] *********************************************************************************************
+2020-09-23 00:34:23,332 p=84316 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:34:23,342 p=84316 u=dliderma n=ansible | TASK [dhcp : Include host list] **********************************************************************************************
+2020-09-23 00:34:23,641 p=84316 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:34:23,651 p=84316 u=dliderma n=ansible | TASK [Enable dhcp service] ***************************************************************************************************
+2020-09-23 00:34:24,155 p=84316 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:34:24,164 p=84316 u=dliderma n=ansible | TASK [dhcp : Create directory for the PXE boot] ******************************************************************************
+2020-09-23 00:34:24,328 p=84316 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:34:24,337 p=84316 u=dliderma n=ansible | TASK [dhcp : Copy files and directory for PXE] *******************************************************************************
+2020-09-23 00:34:24,650 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/altmbr.bin)
+2020-09-23 00:34:24,808 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/meminfo.c32)
+2020-09-23 00:34:24,966 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/altmbr_c.bin)
+2020-09-23 00:34:25,123 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/menu.c32)
+2020-09-23 00:34:25,286 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/altmbr_f.bin)
+2020-09-23 00:34:25,451 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/cat.c32)
+2020-09-23 00:34:25,607 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/chain.c32)
+2020-09-23 00:34:25,768 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/cmd.c32)
+2020-09-23 00:34:25,920 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/cmenu.c32)
+2020-09-23 00:34:26,096 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/config.c32)
+2020-09-23 00:34:26,254 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/cptime.c32)
+2020-09-23 00:34:26,412 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/cpu.c32)
+2020-09-23 00:34:26,576 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/cpuid.c32)
+2020-09-23 00:34:26,761 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/pci.c32)
+2020-09-23 00:34:26,917 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/cpuidtest.c32)
+2020-09-23 00:34:27,082 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/debug.c32)
+2020-09-23 00:34:27,243 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/dhcp.c32)
+2020-09-23 00:34:27,410 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/dir.c32)
+2020-09-23 00:34:27,567 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/disk.c32)
+2020-09-23 00:34:27,725 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/dmi.c32)
+2020-09-23 00:34:27,888 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/dmitest.c32)
+2020-09-23 00:34:28,041 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/elf.c32)
+2020-09-23 00:34:28,201 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/pmload.c32)
+2020-09-23 00:34:28,365 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/ethersel.c32)
+2020-09-23 00:34:28,524 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/gfxboot.c32)
+2020-09-23 00:34:28,683 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/gptmbr.bin)
+2020-09-23 00:34:28,839 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/pcitest.c32)
+2020-09-23 00:34:29,005 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/gptmbr_c.bin)
+2020-09-23 00:34:29,167 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/poweroff.c32)
+2020-09-23 00:34:29,327 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/gptmbr_f.bin)
+2020-09-23 00:34:29,486 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/gpxecmd.c32)
+2020-09-23 00:34:29,645 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/hdt.c32)
+2020-09-23 00:34:29,807 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/hexdump.c32)
+2020-09-23 00:34:29,973 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/host.c32)
+2020-09-23 00:34:30,135 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/ifcpu.c32)
+2020-09-23 00:34:30,296 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/ifcpu64.c32)
+2020-09-23 00:34:30,453 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/prdhcp.c32)
+2020-09-23 00:34:30,615 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/ifmemdsk.c32)
+2020-09-23 00:34:30,779 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/ifplop.c32)
+2020-09-23 00:34:30,943 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/pwd.c32)
+2020-09-23 00:34:31,109 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/isohdpfx.bin)
+2020-09-23 00:34:31,269 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/syslinux.exe)
+2020-09-23 00:34:31,430 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/isohdpfx_c.bin)
+2020-09-23 00:34:31,600 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/vesa.c32)
+2020-09-23 00:34:31,762 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/isohdpfx_f.bin)
+2020-09-23 00:34:31,928 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/vesainfo.c32)
+2020-09-23 00:34:32,083 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/isohdppx.bin)
+2020-09-23 00:34:32,247 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/vesamenu.c32)
+2020-09-23 00:34:32,409 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/isohdppx_c.bin)
+2020-09-23 00:34:32,565 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/vpdtest.c32)
+2020-09-23 00:34:32,736 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/isohdppx_f.bin)
+2020-09-23 00:34:32,897 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/whichsys.c32)
+2020-09-23 00:34:33,059 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/isolinux-debug.bin)
+2020-09-23 00:34:33,220 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/zzjson.c32)
+2020-09-23 00:34:33,387 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/isolinux.bin)
+2020-09-23 00:34:33,553 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/kbdmap.c32)
+2020-09-23 00:34:33,715 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/kontron_wdt.c32)
+2020-09-23 00:34:33,877 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/ldlinux.c32)
+2020-09-23 00:34:34,043 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/lfs.c32)
+2020-09-23 00:34:34,203 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/syslinux64.exe)
+2020-09-23 00:34:34,365 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/libcom32.c32)
+2020-09-23 00:34:34,528 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/libgpl.c32)
+2020-09-23 00:34:34,690 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/liblua.c32)
+2020-09-23 00:34:34,854 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/libmenu.c32)
+2020-09-23 00:34:35,009 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/libutil.c32)
+2020-09-23 00:34:35,179 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/linux.c32)
+2020-09-23 00:34:35,341 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/lpxelinux.0)
+2020-09-23 00:34:35,506 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/ls.c32)
+2020-09-23 00:34:35,668 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/lua.c32)
+2020-09-23 00:34:35,827 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/mboot.c32)
+2020-09-23 00:34:35,993 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/mbr.bin)
+2020-09-23 00:34:36,153 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/mbr_c.bin)
+2020-09-23 00:34:36,321 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/mbr_f.bin)
+2020-09-23 00:34:36,486 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/memdisk)
+2020-09-23 00:34:36,643 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/pxechn.c32)
+2020-09-23 00:34:36,811 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/pxelinux.0)
+2020-09-23 00:34:36,977 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/reboot.c32)
+2020-09-23 00:34:37,146 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/rosh.c32)
+2020-09-23 00:34:37,307 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/sanboot.c32)
+2020-09-23 00:34:37,470 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/sdi.c32)
+2020-09-23 00:34:37,635 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/sysdump.c32)
+2020-09-23 00:34:37,800 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/syslinux.c32)
+2020-09-23 00:34:37,971 p=84316 u=dliderma n=ansible | ok: [localhost] => (item=/usr/share/syslinux/syslinux.com)
+2020-09-23 00:34:37,997 p=84316 u=dliderma n=ansible | TASK [dhcp : default PXE boot menu] ******************************************************************************************
+2020-09-23 00:34:38,325 p=84316 u=dliderma n=ansible | ok: [localhost]
+2020-09-23 00:34:38,335 p=84316 u=dliderma n=ansible | TASK [dhcp : PXE boot menu for clients] **************************************************************************************
+2020-09-23 00:34:38,678 p=84316 u=dliderma n=ansible | ok: [localhost] => (item={'name': 'client.internal', 'ipaddr': '192.168.100.20', 'macaddr': '52:54:00:69:5b:20'})
+2020-09-23 00:34:38,688 p=84316 u=dliderma n=ansible | TASK [dhcp : Create CentOS8 boot dir] ****************************************************************************************
+2020-09-23 00:34:38,856 p=84316 u=dliderma n=ansible | changed: [localhost]
+2020-09-23 00:34:38,866 p=84316 u=dliderma n=ansible | TASK [dhcp : Install boot kernel] ********************************************************************************************
+2020-09-23 00:34:39,223 p=84316 u=dliderma n=ansible | changed: [localhost]
+2020-09-23 00:34:39,232 p=84316 u=dliderma n=ansible | TASK [dhcp : Install boot initrd] ********************************************************************************************
+2020-09-23 00:34:39,725 p=84316 u=dliderma n=ansible | changed: [localhost] => (item={'name': 'client.internal', 'ipaddr': '192.168.100.20', 'macaddr': '52:54:00:69:5b:20'})
+2020-09-23 00:34:39,735 p=84316 u=dliderma n=ansible | TASK [dhcp : SELinux repair PXE] *********************************************************************************************
+2020-09-23 00:34:40,032 p=84316 u=dliderma n=ansible | changed: [localhost]
+2020-09-23 00:34:40,034 p=84316 u=dliderma n=ansible | PLAY RECAP *******************************************************************************************************************
+2020-09-23 00:34:40,034 p=84316 u=dliderma n=ansible | localhost                  : ok=15   changed=4    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
