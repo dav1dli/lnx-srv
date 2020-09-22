@@ -1,0 +1,8 @@
+master:
+  name: master.internal
+  ipaddr: "192.168.100.10"
+
+clients:
+  - name: "client.internal"
+    ipaddr: "192.168.100.20"
+    macaddr: "52:54:00:69:5b:20"

@@ -1,0 +1,17 @@
+---
+dhcp:
+  package: dhcp-server
+  service: dhcpd
+  port: dhcp
+  etcdir: /etc/dhcp
+  domain: "internal"
+  dns: "192.168.100.10"
+  subnet: "192.168.100.0"
+  router: "192.168.100.1"
+  netmask: "255.255.255.0"
+  bcast: "192.168.100.255"
+  nextserver: "192.168.100.10"
+tftp:
+  package: tftp-server
+  port: tftp
+  root: /var/lib/tftpboot

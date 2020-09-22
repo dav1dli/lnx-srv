@@ -1,0 +1,9 @@
+---
+- name: Configure Master
+  hosts: master
+  become: yes
+
+  tasks:
+    - name: Setup dhcp
+      include_role:
+        name: dhcp

@@ -1,0 +1,14 @@
+$TTL 86400
+@ IN SOA master.internal. admin.internal. (
+                                                2020011800 ;Serial
+                                                3600 ;Refresh
+                                                1800 ;Retry
+                                                604800 ;Expire
+                                                86400 ;Minimum TTL
+)
+
+@ IN NS master.internal.
+master IN A 192.168.100.10
+
+10 IN PTR master.internal.
+

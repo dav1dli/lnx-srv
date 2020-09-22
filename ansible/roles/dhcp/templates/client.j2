@@ -1,0 +1,6 @@
+default client
+prompt 0
+timeout 30
+label client
+ kernel centos8/vmlinuz
+ append ip=dhcp initrd=centos8/initrd.img method=http://mirror.centos.org/centos/8/BaseOS/x86_64/os/ devfs=nomount

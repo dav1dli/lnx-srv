@@ -1,0 +1,8 @@
+---
+- name: restart dhcpd
+  service:
+    name: dhcpd
+    state: restarted
+- name: reload firewalld
+  command: firewall-cmd --reload
+

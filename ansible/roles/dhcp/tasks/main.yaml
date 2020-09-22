@@ -1,0 +1,116 @@
+---
+- name: Install packages
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - "{{ dhcp.package }}"
+    - "{{ tftp.package }}"
+    - syslinux
+
+- name: Open firewall ports
+  firewalld:
+    permanent: yes
+    immediate: yes
+    state: enabled
+    service: "{{ item }}"
+  loop:
+    - "{{ dhcp.port }}"
+    - "{{ tftp.port }}"
+  notify: reload firewalld
+
+- name: Get dhcpd.conf file status
+  stat:
+    path="{{ dhcp.etcdir }}/dhcpd.conf"
+  register: file
+
+- name: Make dhcp dir
+  file:
+    path: "{{ dhcp.etcdir }}"
+    state: directory
+    recurse: yes
+    mode: '0750'
+  when: file.stat.exists == False
+
+- name: Backup dhcpd.conf
+  archive:
+    path: "{{ dhcp.etcdir }}/dhcpd.conf"
+    dest: /tmp/dhcpd-conf.tgz
+  when: file.stat.exists
+
+- name: Install dhcpd.conf
+  template:
+    src: "dhcpd.conf.j2"
+    dest: "{{ dhcp.etcdir }}/dhcpd.conf"
+    mode: '0644'
+  notify: restart dhcpd
+
+- name: Generate host list
+  template:
+    src: templates/dhcp-include.j2
+    dest: "{{ dhcp.etcdir }}/clients.conf"
+    mode: '0644'
+
+- name: Include host list
+  lineinfile:
+    path: "{{ dhcp.etcdir }}/dhcpd.conf"
+    insertafter: 'filename "pxelinux.0";'
+    line: include "{{ dhcp.etcdir }}/clients.conf";
+  notify: restart dhcpd
+
+- name: Enable dhcp service
+  service:
+    name: "{{ dhcp.service }}"
+    state: started
+    enabled: true
+
+- name: Create directory for the PXE boot
+  file:
+     path: "{{ tftp.root }}/pxelinux.cfg"
+     state: directory
+     recurse: true
+     owner: root
+     group: root
+- name: Copy files and directory for PXE
+  copy:
+    src: "{{ item }}"
+    dest: "{{ tftp.root }}"
+    remote_src: yes
+    mode: 0644
+  with_fileglob:
+    - "/usr/share/syslinux/*"
+  ignore_errors: true
+- name: default PXE boot menu
+  template:
+    src: templates/default.j2
+    dest: "{{ tftp.root }}/pxelinux.cfg/default"
+    mode: 0644
+- name: PXE boot menu for clients
+  template:
+    src: templates/client.j2
+    dest: "{{ tftp.root }}/pxelinux.cfg/01-{{ item.macaddr | regex_replace (':', '-')}}"
+    mode: 0644
+  with_items: "{{ clients | lower }}"
+- name: Create CentOS8 boot dir
+  file:
+    path: "{{ tftp.root }}/centos8"
+    state: directory
+    recurse: yes
+    mode: '0750'
+
+- name: Install boot kernel
+  copy:
+    src: /tmp/vmlinuz
+    dest: "{{ tftp.root }}/centos8/"
+    mode: '0644'
+- name: Install boot initrd
+  copy:
+    src: /tmp/initrd.img
+    dest: "{{ tftp.root }}/centos8/"
+    mode: '0644'
+
+  with_items: "{{ clients | lower }}"
+- name: SELinux repair PXE
+  shell: restorecon -vRF "{{ tftp.root }}"
+  ignore_errors: true
+

@@ -1,0 +1,9 @@
+{% for node in clients %}
+host {{ node.name.split(".")[0] | lower }} { hardware ethernet {{ node.macaddr }}; fixed-address {{ node.ipaddr }}; option host-name "{{ node.name | lower }}"; }
+{% endfor %}
+{% if workers is defined %}
+{% for w in workers %}
+        host {{ w.name.split(".")[0] | lower }} { hardware ethernet {{ w.macaddr }}; fixed-address {{ w.ipaddr }}; option host-name "{{ w.name | lower }}"; }
+{% endfor %}
+{% endif %}
+
